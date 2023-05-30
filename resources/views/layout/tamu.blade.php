@@ -61,150 +61,34 @@
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Galeri</a>
               <ul class="dropdown-menu ">
                 <li>
-                  <a href="#" class="dropdown-item">Latihan Sanggar Tari</a>
+                  <a href="{{route('galerilatihan')}}" class="dropdown-item">Latihan Sanggar Tari</a>
                 </li>
                 <li>
-                  <a href="#" class="dropdown-item">Acara Besar</a>
+                  <a href="{{route('galeriacarabesar')}}" class="dropdown-item">Acara Besar</a>
                 </li>
                 <li>
-                  <a href="#" class="dropdown-item">Asset Sanggar</a>
+                  <a href="{{route('assetsanggar')}}" class="dropdown-item">Asset Sanggar</a>
                 </li>
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Jadwal Acara</a>
+              <a class="nav-link" href="{{route('jadwalacara')}}">Jadwal Acara</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Article</a>
+              <a class="nav-link" href="{{route('showarticle')}}">Article</a>
             </li>
             <li class="nav-item" >
-              <a class="nav-link" href="login">Masuk</a>
+              <a class="nav-link" href="{{route('showlogin')}}">Masuk</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
   </header>
-  <!--Get Started-->
-  <div>
-    <div id="carouselExampleCaptions" class="carousel slide"data-bs-ride="true" >
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="2500" style="animation-delay: 2s">
-          <img src="{{url('assets/dashboard_.png')}}" class="d-block w-100" alt="...">
-          <div class="position-absolute top-50 start-50 translate-middle">
-            <h2 style="text-align: center; color: white; font-size: 48px; font-family: 'Times New Roman', Times, serif;" >Selamat Datang di Website Sanggar Tari Topeng Mimi Rasinah</h2>
-            <center><a href="#" class="btn btn-primary" style="font-size: 25px; font-family: 'Times New Roman', Times, serif;">Get Started</a></center>
-          </div>
-        </div>
-        <div class="carousel-item active" data-bs-interval="2500">
-          <img src="{{url('assets/dashboard_2.jpg')}}" class="d-block w-100" alt="..."data-mdb-animation="slide-in-right">
-          <div class="position-absolute top-50 start-50 translate-middle">
-            <h2 style="text-align: center; color: white; font-size: 48px; font-family: 'Times New Roman', Times, serif;" >Selamat Datang di Website Sanggar Tari Topeng Mimi Rasinah</h2>
-            <center><a href="#" class="btn btn-primary" style="font-size: 25px; font-family: 'Times New Roman', Times, serif;">Get Started</a></center>
-          </div>
-        </div>  
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  </div>
-  <!-- CONTENT GET STARTERD -->
-  <div class="container-fluid">
-    <div class="card mb-3 mt-2">
-      <div class="card-body">
-        <div class="row">
-          <div class="col">
-            <img src="{{url('assets/mimi-rasinah-1.jpg')}}">
-          </div>
-          <div class="col col-lg-9">
-            <H1 style="font-family: 'Times New Roman', Times, serif; align: center; font-size:35px">Tentang Sanggar Tari Topeng Mimi Rasinah</H1> <br>
-            <p style="font-family: 'Times New Roman', Times, serif; align:justify; font-size:20px">Mimi Rasinah merupakan tokoh seniman tari topeng yang berasal dari Cirebon. Aktif dalam mempertahankan eksistensi kebudayaan Tari Topeng, Mimi Rasinah berhasil mendirikan sebuah sanggar tari yang hingga kini namanya cukup terkenal baik skala lokal hingga diakui oleh seluruh mancanegara.</p>
-          </div>
-      </div>
-    </div>
-    </div>
-    <div class="container-fluid">
-      <div class="card mb-3 mt-2">
-        <div class="card-header bg-primary"><h4 class="text-center" style="font-family: 'Times New Roman', Times, serif;">JADWAL ACARA SANGGAR TARI MIMI RASINAH</h4></div>
-        <div class="card-body">
-          <table  class="table table-hover table-bordered" style="font-family: 'Times New Roman', Times, serif;">
-            <thead class="text-center">
-              <th scope="col">Tanggal</th>
-              <th scope="col">Nama Kegiatan</th>
-              <th scope="col">Tempat</th>
-            </thead>
-            <tbody>
-              <tr>
-                <td>15 Agustus 2023</td>
-                <td style="font-size: 18px">Pertunjukan Seni Indonesia - Hut Merdeka 76</td>
-                <td><center><a href="#" class="btn btn-info" >Gedung Kesenian Indramayu</a></center></td>
-              </tr>
-              <tr>
-                <td class="col col-lg-1">15 Agustus 2023</td>
-                <td style="font-size: 18px">Pertunjukan Seni Indonesia - Hut Merdeka 76</td>
-                <td><center><a href="#" class="btn btn-info" >Gedung Kesenian Indramayu</a> </center></td>
-              </tr>
-              <tr>
-                <td>15 Agustus 2023</td>
-                <td style="font-size: 18px">Pertunjukan Seni Indonesia - Hut Merdeka 76</td>
-                <td><center><a href="#" class="btn btn-info" >Gedung Kesenian Indramayu</a> </center></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="container-fluid mt-3 mb-3">
-    <div class="row">
-      <div class="col">
-        <div class="card mb-3">
-          <img src="assets/dashboard-gambar.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <a href="" style="text-decoration:none; color:black"><h4 class="card-title">Festival Hari Jadi ke-496 Indramayu, Sanggar Tari Mimi Rasinah Ikut Serta Memeriahkan Acara</h4></a>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card mb-3">
-          <img src="assets/dashboard-gambar.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <a href="" style="text-decoration:none; color:black"><h4 class="card-title">Festival Hari Jadi ke-496 Indramayu, Sanggar Tari Mimi Rasinah Ikut Serta Memeriahkan Acara</h4></a>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card mb-3">
-          <img src="assets/dashboard-gambar.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <a href="" style="text-decoration:none; color:black"><h4 class="card-title">Festival Hari Jadi ke-496 Indramayu, Sanggar Tari Mimi Rasinah Ikut Serta Memeriahkan Acara</h4></a>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  
-<!-- Footer -->
-  <footer class="bg-secondary text-white text-center text-lg-start">
+  <!--Content In Here-->
+  @yield('content')
+  <!-- Footer -->
+  <footer class="bg-secondary text-white text-center text-lg-start bottom">
     <!-- Grid container -->
     <div class="container p-4">
       <!--Grid row-->
