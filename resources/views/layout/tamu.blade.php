@@ -46,7 +46,7 @@
   <header>
     <nav class="navbar navbar-expand-lg bg-danger fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
           <img src="{{url('assets/logo_sanggartari.png')}}" alt="Logo"  height="55" class="d-inline-block align-text-top">
         </a>
         <h5 class="navbrandtxt">
@@ -61,24 +61,24 @@
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Galeri</a>
               <ul class="dropdown-menu ">
                 <li>
-                  <a href="{{route('galerilatihan')}}" class="dropdown-item">Latihan Sanggar Tari</a>
+                  <a href="#" class="dropdown-item">Latihan Sanggar Tari</a>
                 </li>
                 <li>
-                  <a href="{{route('galeriacarabesar')}}" class="dropdown-item">Acara Besar</a>
+                  <a href="#" class="dropdown-item">Acara Besar</a>
                 </li>
                 <li>
-                  <a href="{{route('assetsanggar')}}" class="dropdown-item">Asset Sanggar</a>
+                  <a href="#" class="dropdown-item">Asset Sanggar</a>
                 </li>
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{route('jadwalacara')}}">Jadwal Acara</a>
+              <a class="nav-link" href="#">Jadwal Acara</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{route('showarticle')}}">Article</a>
+              <a class="nav-link" href="#">Article</a>
             </li>
             <li class="nav-item" >
-              <a class="nav-link" href="{{route('showlogin')}}">Masuk</a>
+              <a class="nav-link" href="#">Masuk</a>
             </li>
           </ul>
         </div>

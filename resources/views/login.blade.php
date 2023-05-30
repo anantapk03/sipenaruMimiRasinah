@@ -35,7 +35,7 @@
                 <input type="password" class="form-control" id="password" placeholder="password" name="password">
               </div>
               <div class="text-center"><button type="submit" class="btn btn-primary px-5 mb-5 sm-3">Masuk</button></div>
-              <div id="emailHelp" class="form-text text-center mb-5 text-dark">Belum memiliki akun? <a href="{{'/daftar'}}" class="text-dark fw-bold">Daftar</a>
+              <div id="emailHelp" class="form-text text-center mb-5 text-dark">Belum memiliki akun? <a href="{{'/register'}}" class="text-dark fw-bold">Daftar</a>
               </div>
           </form>
         </div>

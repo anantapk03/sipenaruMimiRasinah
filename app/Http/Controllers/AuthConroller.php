@@ -34,6 +34,10 @@ class AuthConroller extends Controller
         return view('login')->with('errors','Data yang anda inputkan salah!');
     }
 
+    function tampilan_register(){
+        return view('daftar');
+    }
+
     function logout(){
         Auth::logout();
         return redirect()->intended('login');

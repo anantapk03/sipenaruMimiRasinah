@@ -9,10 +9,10 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-sm-10">
-                                <h3 class="card-title">Data Petugas Sanggar Tari Topeng Mimi Rasinah</h3>
+                                <h3 class="card-title">Data Admin Sanggar Tari Topeng Mimi Rasinah</h3>
                             </div>
                             <div class="col">
-                              <center><a href="/admin/mengelola_petugassanggar/add_data" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon>Tambah</a></center>
+                              <center><a href="/admin/mengelola_admin/add_data" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon>Tambah</a></center>
                             </div>
                         </div>
                     </div>
@@ -50,8 +50,10 @@
                                 <td>{{$row->alamat}}</td>
                                 <td>{{$row->created_at}}</td>
                                 <td> 
-                                  <a href="/admin/edit_petugas/{{$row->id}}" class="btn btn-warning btn-sm"><ion-icon name="create-outline"></ion-icon>Edit</a>
-                                  <a href="#" class="btn btn-danger btn-sm delete_petugas" data-id="{{$row->id}}"><ion-icon name="trash-outline"></ion-icon> <!--outline-->Hapus</a>
+                                  <a href="/admin/edit_admin/{{$row->id}}" class="btn btn-warning btn-sm"><ion-icon name="create-outline"></ion-icon>Edit</a>
+                                  @if ($row->id != auth()->user()->id)
+                                  <a href="#" class="btn btn-danger btn-sm delete_admin" data-id="{{$row->id}}"><ion-icon name="trash-outline"></ion-icon> <!--outline-->Hapus</a>
+                                  @endif
                                 </td>
                               </tr>
                               @endforeach

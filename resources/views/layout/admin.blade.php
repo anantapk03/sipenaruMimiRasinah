@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Dashboard</title>
+  <title>{{$title}}</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -107,7 +107,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{'/admin/dataanggota'}}" class="nav-link {{(request()->is('admin/dataanggota'))? 'active' : ''}}">
+                <a href="#" class="nav-link {{(request()->is('admin/dataanggota'))? 'active' : ''}}">
                   <i class="nav-icon fas fa-user"></i>
                   <p>
                     Data Anggota
@@ -115,7 +115,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{'/admin/dataadmin'}}" class="nav-link {{(request()->is('admin/dataadmin'))? 'active' : ''}}">
+                <a href="{{'/admin/mengelola_admin'}}" class="nav-link {{(request()->is('admin/dataadmin'))? 'active' : ''}}">
                   <i class="nav-icon fas fa-user"></i>
                   <p>
                     Data Admin
@@ -232,7 +232,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 <script>
-  $('.delete').click(function(){
+  $('.delete_petugas').click(function(){
     var id = $(this).attr('data-id');
     Swal.fire({
       title: 'Apakah anda yakin?',
@@ -244,7 +244,7 @@
       confirmButtonText: 'Hapus!'
     }).then((result) => {
       if (result.isConfirmed) {
-        window.location="admin/hapus_datapetugas/"+id+""
+        window.location="/admin/hapus_datapetugas/"+id+""
         Swal.fire(
           'Berhasil!!',
           'Data Berhasil Dihapus',
@@ -253,11 +253,11 @@
       }
     })
   })
-  $('.delete_anggota').click(function(){
-    var anggotaemail = $(this).attr('data-id');
+  $('.delete_admin').click(function(){
+    var id = $(this).attr('data-id');
     Swal.fire({
       title: 'Apakah anda yakin?',
-      text: "Kamu akan menghapus data dengan email "+anggotaemail+" ",
+      text: "Kamu akan menghapus data dengan id "+id+" ",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
@@ -265,7 +265,7 @@
       confirmButtonText: 'Hapus!'
     }).then((result) => {
       if (result.isConfirmed) {
-        window.location="/admin/delete_anggota/"+anggotaemail+""
+        window.location="/admin/hapus_dataadmin/"+id+""
         Swal.fire(
           'Berhasil!!',
           'Data Berhasil Dihapus',
