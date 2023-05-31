@@ -99,7 +99,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/admin/mengelola_petugassanggar" class="nav-link {{(request()->is('admin/datapetugassanggar'))? 'active' : ''}}">
+                <a href="/admin/mengelola_petugassanggar" class="nav-link {{(request()->is('admin/mengelola_petugassanggar'))? 'active' : ''}}">
                   <i class="nav-icon fas fa-user"></i>
                   <p>
                     Data Petugas Sanggar
@@ -107,7 +107,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link {{(request()->is('admin/dataanggota'))? 'active' : ''}}">
+                <a href="#" class="nav-link {{(request()->is('admin/mengelola_anggota'))? 'active' : ''}}">
                   <i class="nav-icon fas fa-user"></i>
                   <p>
                     Data Anggota
@@ -115,7 +115,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{'/admin/mengelola_admin'}}" class="nav-link {{(request()->is('admin/dataadmin'))? 'active' : ''}}">
+                <a href="{{'/admin/mengelola_admin'}}" class="nav-link {{(request()->is('admin/mengelola_admin'))? 'active' : ''}}">
                   <i class="nav-icon fas fa-user"></i>
                   <p>
                     Data Admin

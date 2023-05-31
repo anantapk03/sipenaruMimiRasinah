@@ -10,7 +10,8 @@ class AdminController extends Controller
 {
     //
     function index(){
-        return view('admin.dashboard');
+        $title="Admin | Dashboard";
+        return view('admin.dashboard', ['title' => $title]);
     }
 
     function mengelola_petugassanggar (Request $request){

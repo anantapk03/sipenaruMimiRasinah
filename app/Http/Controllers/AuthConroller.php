@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Auth;
 class AuthConroller extends Controller
 {
     function index(){
-        return view('login');
+        $warning =null;
+        return view('login', array('warning' => $warning));
     }
     function auth_login(Request $request){
         request()->validate(
@@ -31,7 +32,8 @@ class AuthConroller extends Controller
                 return redirect()->intended('anggota');
             }
         }
-        return view('login')->with('errors','Data yang anda inputkan salah!');
+        $warning = "Data yang anda inputkan salah!";
+        return view('/login',['warning'=>$warning]);
     }
 
     function tampilan_register(){

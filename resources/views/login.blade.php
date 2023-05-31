@@ -12,14 +12,10 @@
     <div class="row">
       <div class="col-md-6 offset-md-3" >
         <div class="card my-5" >
-          @if ($errors->any())
-              <div class="alert alert-danger">
-                <ul>
-                  @foreach ($errors->all() as $item)
-                    <li>{{$item}}</li>                      
-                  @endforeach
-                </ul>
-              </div>
+          @if($warning!=null)
+          <div class="alert alert-danger">
+            <p>{{$warning}}</p>
+          </div>
           @endif
           <form class="card-body cardbody-color p-lg-5" method="post" action="proses_login">
               {{ csrf_field() }}
