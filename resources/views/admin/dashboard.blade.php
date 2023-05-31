@@ -29,7 +29,7 @@
                                   <b>Alamat</b> <a class="float-right">{{auth()->user()->alamat}}</a>
                                 </li>
                               </ul>
-                              <a href="#" class="btn btn-primary btn-block"><b>Edit Data</b></a>
+                              <a href="/admin/edit_admin/{{auth()->user()->id}}" class="btn btn-primary btn-block"><b>Edit Data</b></a>
                             </div>
                         </div>
                             <!-- /.card-body -->

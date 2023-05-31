@@ -107,7 +107,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link {{(request()->is('admin/mengelola_anggota'))? 'active' : ''}}">
+                <a href="/admin/mengelola_anggota" class="nav-link {{(request()->is('admin/mengelola_anggota'))? 'active' : ''}}">
                   <i class="nav-icon fas fa-user"></i>
                   <p>
                     Data Anggota
@@ -115,7 +115,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{'/admin/mengelola_admin'}}" class="nav-link {{(request()->is('admin/mengelola_admin'))? 'active' : ''}}">
+                <a href="/admin/mengelola_admin" class="nav-link {{(request()->is('admin/mengelola_admin'))? 'active' : ''}}">
                   <i class="nav-icon fas fa-user"></i>
                   <p>
                     Data Admin
@@ -266,6 +266,27 @@
     }).then((result) => {
       if (result.isConfirmed) {
         window.location="/admin/hapus_dataadmin/"+id+""
+        Swal.fire(
+          'Berhasil!!',
+          'Data Berhasil Dihapus',
+          'success'
+        )
+      }
+    })
+  })
+  $('.delete_anggota').click(function(){
+    var id = $(this).attr('data-id');
+    Swal.fire({
+      title: 'Apakah anda yakin?',
+      text: "Kamu akan menghapus data dengan id "+id+" ",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Hapus!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location="/admin/hapus_dataanggota/"+id+""
         Swal.fire(
           'Berhasil!!',
           'Data Berhasil Dihapus',

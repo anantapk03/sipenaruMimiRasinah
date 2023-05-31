@@ -45,6 +45,14 @@ Route::group(['middleware' => ['auth']],function(){
         Route::get('admin/hapus_dataadmin/{id}', [AdminController::class, 'hapus_dataadmin'])->name('hapus_dataadmin');
         Route::get('admin/edit_admin/{id}',[AdminController::class, 'tampil_dataadmin'])->name('tampil_dataadmin');
         Route::post('admin/edit_passadmin/{id}',[AdminController::class, 'edit_passadmin'])->name('edit_passadmin');
+
+        Route::get('admin/mengelola_anggota', [AdminController::class, 'mengelola_anggota'])->name('mengelola_anggota');
+        Route::get('admin/mengelola_anggota/add_data', [AdminController::class, 'form_addanggota'])->name('form_anggota');
+        Route::post('admin/add_anggota',[AdminController::class, 'add_anggota'])->name('add_anggota');
+        Route::get('admin/edit_anggota/{id}',[AdminController::class, 'tampil_dataanggota'])->name('tampil_dataanggota');
+        Route::post('admin/edit_passanggota/{id}',[AdminController::class, 'edit_passanggota'])->name('edit_passanggota');
+        Route::get('admin/hapus_dataanggota/{id}', [AdminController::class, 'hapus_dataanggota'])->name('hapus_dataanggota');
+        
     });
 
     Route::group(['middleware' =>'cek_level:petugas'],function(){
