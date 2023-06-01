@@ -160,7 +160,7 @@
           </li>
           <li class="nav-item">
             <a href="/logout" class="nav-link">
-              <i class="nav-icon far fa-image"></i>
+            <ion-icon name="exit-outline"></ion-icon>
               <p>
                 Logout
               </p>

@@ -44,7 +44,7 @@
                                 <td>{{$row->id}}</td>
                                 <td>{{$row->email}}</td>  
                                 <td>
-                                  <img src="{{asset('fotopetugassanggar/'.$row->image)}}" alt="" style="width: 80px">
+                                  <img src="{{asset('fotoadmin/'.$row->image)}}" alt="" style="width: 80px">
                                 </td>
                                 <td> {{$row->nama}} </td>
                                 <td>{{$row->alamat}}</td>
