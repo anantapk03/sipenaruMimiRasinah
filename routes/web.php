@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\AuthConroller;
+use App\Http\Controllers\LatihanController;
 use App\Http\Controllers\PetugasController;
 use Illuminate\Support\Facades\Route;
 
@@ -52,6 +53,9 @@ Route::group(['middleware' => ['auth']],function(){
         Route::get('admin/edit_anggota/{id}',[AdminController::class, 'tampil_dataanggota'])->name('tampil_dataanggota');
         Route::post('admin/edit_passanggota/{id}',[AdminController::class, 'edit_passanggota'])->name('edit_passanggota');
         Route::get('admin/hapus_dataanggota/{id}', [AdminController::class, 'hapus_dataanggota'])->name('hapus_dataanggota');
+
+        //Mengelola Data Latihan
+        Route::get('admin/mengelola_latihan', [LatihanController::class, 'index'])->name('mengelola_latihan');
         
     });
 

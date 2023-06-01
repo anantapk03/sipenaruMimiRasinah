@@ -21,8 +21,9 @@ class CreateLatihansTable extends Migration
             $table->dateTime('mulai_latihan');
             $table->dateTime('selesai_latihan');
             $table->string('deskripsi_latihan');
-            $table->foreignId('id_pelatih');
+            $table->foreignId('id_pelatih')->references('id')->on('users');
             $table->timestamps(); 
+            
         });
     }
 

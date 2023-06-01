@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{$title}}</title>
+  <title>{{auth()->user()->level}} | {{$title}}</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -125,7 +125,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/admin/mengelola_latihan" class="nav-link {{(request()->is('admin/mengelola_latihan'))? 'active' : ''}}">
               <i class="nav-icon fas fa-edit"></i>
               <p>
                 Data Latihan
