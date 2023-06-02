@@ -14,7 +14,7 @@ class CreateLatihansTable extends Migration
     public function up()
     {
         Schema::create('latihans', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_latihan');
             $table->string('nama_latihan');
             $table->dateTime('mulai_pendaftaran');
             $table->dateTime('selesai_pendaftaran');
@@ -23,7 +23,6 @@ class CreateLatihansTable extends Migration
             $table->string('deskripsi_latihan');
             $table->foreignId('id_pelatih')->references('id')->on('users');
             $table->timestamps(); 
-            
         });
     }
 

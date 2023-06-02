@@ -11,12 +11,11 @@ class Latihan extends Model
 
     protected $fillable = [
         'nama_latihan',
-        'mullai_pendaftaran',
+        'mulai_pendaftaran',
         'selesai_pendaftaran',
         'mulai_latihan',
         'selesai_latihan',
-        'id_',
-        'alamat',
-
+        'id_pelatih',
+        'deskripsi_latihan',
     ];
 }

@@ -56,6 +56,9 @@ Route::group(['middleware' => ['auth']],function(){
 
         //Mengelola Data Latihan
         Route::get('admin/mengelola_latihan', [LatihanController::class, 'index'])->name('mengelola_latihan');
+        Route::get('admin/add_latihan', [LatihanController::class, 'tambah_latihan'])->name('tambah_latihan');
+        Route::post('admin/add_latihan/post',[LatihanController::class, 'post_latihan'])->name('post_latihanadd');
+    
         
     });
 

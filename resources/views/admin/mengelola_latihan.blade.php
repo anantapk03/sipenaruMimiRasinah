@@ -12,7 +12,7 @@
                                 <h3 class="card-title">Data Latihan Sanggar Tari Topeng Mimi Rasinah</h3>
                             </div>
                             <div class="col">
-                              <center><a href="#" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon>Tambah</a></center>
+                              <center><a href="/admin/add_latihan" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon>Tambah</a></center>
                             </div>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                             <tbody>
                               @foreach ($data as $row)
                               <tr>
-                                <td>{{$row->id}}</td>
+                                <td>{{$row->id_latihan}}</td>
                                 <td>{{$row->nama_latihan}}</td>  
                                 <td> {{$row->mulai_pendaftaran}} - {{$row->selesai_pendaftaran}}  </td>
                                 <td>{{$row->mulai_latihan}} - {{$row->selesai_latihan}} </td>
