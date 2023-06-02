@@ -66,4 +66,12 @@ class LatihanController extends Controller
                                      ]);
         return redirect('admin/mengelola_latihan')->with('success', 'Data berhasil diperbarui!');
     }
+
+    function detail_latihan(Request $request, $id_latihan){
+        $data = DB::table('latihans')
+        ->leftJoin('users', 'latihans.id_pelatih', '=', 'users.id')
+        ->first();
+        $title='Admin | Info Detail Latihan';
+        return view('admin.detail_latihan',compact('data', 'title'));
+    }
 }
