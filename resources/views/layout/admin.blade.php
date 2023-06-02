@@ -295,5 +295,26 @@
       }
     })
   })
+  $('.delete_latihan').click(function(){
+    var id = $(this).attr('data-id');
+    Swal.fire({
+      title: 'Apakah anda yakin?',
+      text: "Kamu akan menghapus data dengan id "+id+" ",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Hapus!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location="/admin/hapus_datalatihan/"+id+""
+        Swal.fire(
+          'Berhasil!!',
+          'Data Berhasil Dihapus',
+          'success'
+        )
+      }
+    })
+  })
 </script>
 </html>

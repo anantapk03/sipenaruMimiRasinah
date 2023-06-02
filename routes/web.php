@@ -58,7 +58,8 @@ Route::group(['middleware' => ['auth']],function(){
         Route::get('admin/mengelola_latihan', [LatihanController::class, 'index'])->name('mengelola_latihan');
         Route::get('admin/add_latihan', [LatihanController::class, 'tambah_latihan'])->name('tambah_latihan');
         Route::post('admin/add_latihan/post',[LatihanController::class, 'post_latihan'])->name('post_latihanadd');
-    
+        Route::get('admin/hapus_datalatihan/{id_latihan}', [LatihanController::class, 'delete_latihan'])->name('hapus_datalatihan');
+        Route::get('admin/edit_datalatihan/{id_latihan}', [LatihanController::class, 'edit_latihan'])->name('edit_datalatihan');
         
     });
 

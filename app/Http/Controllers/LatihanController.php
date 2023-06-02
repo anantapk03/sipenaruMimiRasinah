@@ -15,6 +15,7 @@ class LatihanController extends Controller
         $data = DB::table('latihans')
             ->leftJoin('users', 'latihans.id_pelatih', '=', 'users.id')
             ->get();
+            
 
         $title = 'Mengelola Data Latihan';
         return view('admin.mengelola_latihan', compact('title', 'data'));
@@ -38,5 +39,17 @@ class LatihanController extends Controller
         $data->id_pelatih = $request->id_pelatih;
         $data->save();
         return redirect('admin/mengelola_latihan')->with('success', 'Data berhasil ditambahkan!');
+    }
+
+    function delete_latihan(Request $request, $id_latihan){
+        DB::table('latihans')->where('id_latihan', $id_latihan)->delete();
+        return redirect('admin/mengelola_latihan')->with('success', 'Data berhasil dihapus!');
+    }
+
+    function edit_latihan(Request $request, $id_latihan){
+     $data = DB::table('latihans')->where('id_latihan', $id_latihan)->first();
+     $data2 = DB::table('users')->Where('level', 'admin')->orWhere('level', 'petugas')->get();
+     $title='Admin | Edit Data Latihan';
+     return view('admin.edit_latihan',compact('data', 'data2', 'title'));    
     }
 }

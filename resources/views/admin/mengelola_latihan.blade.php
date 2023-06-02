@@ -43,13 +43,13 @@
                               <tr>
                                 <td>{{$row->id_latihan}}</td>
                                 <td>{{$row->nama_latihan}}</td>  
-                                <td> {{$row->mulai_pendaftaran}} - {{$row->selesai_pendaftaran}}  </td>
-                                <td>{{$row->mulai_latihan}} - {{$row->selesai_latihan}} </td>
+                                <td> {{\Carbon\Carbon::parse($row->mulai_pendaftaran)->format('D M Y')}} - {{\Carbon\Carbon::parse($row->selesai_pendaftaran)->translatedformat('D M Y')}}  </td>
+                                <td>{{\Carbon\Carbon::parse($row->mulai_latihan)->format('D M Y')}} - {{\Carbon\Carbon::parse($row->selesai_latihan)->format('D M Y')}} </td>
                                 <td>{{$row->nama}}</td>
                                 <td>{{$row->deskripsi_latihan}}</td>
                                 <td> 
-                                  <a href="/admin/edit_anggota/{{$row->id}}" class="btn btn-warning btn-sm"><ion-icon name="create-outline"></ion-icon>Edit</a>
-                                  <a href="#" class="btn btn-danger btn-sm delete_anggota" data-id="{{$row->id}}"><ion-icon name="trash-outline"></ion-icon> <!--outline-->Hapus</a>
+                                  <a href="/admin/edit_datalatihan/{{$row->id_latihan}}" class="btn btn-warning btn-sm"><ion-icon name="create-outline"></ion-icon>Edit</a>
+                                  <a href="#" class="btn btn-danger btn-sm delete_latihan" data-id="{{$row->id_latihan}}"><ion-icon name="trash-outline"></ion-icon> <!--outline-->Hapus</a>
                                 </td>
                               </tr>
                               @endforeach
