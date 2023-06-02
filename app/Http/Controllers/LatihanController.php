@@ -52,4 +52,18 @@ class LatihanController extends Controller
      $title='Admin | Edit Data Latihan';
      return view('admin.edit_latihan',compact('data', 'data2', 'title'));    
     }
+
+    function update_latihan(Request $request, $id_latihan){
+        $data = DB::table('latihans')->where('id_latihan', $id_latihan)
+                                     ->update([
+                                        'nama_latihan' => $request->nama_latihan,
+                                        'mulai_pendaftaran' => $request->mulai_pendaftaran,
+                                       'selesai_pendaftaran' => $request->selesai_pendaftaran,
+                                       'mulai_latihan' => $request->mulai_latihan,
+                                       'selesai_latihan' => $request->selesai_latihan,
+                                       'deskripsi_latihan' => $request->deskripsi_latihan,
+                                       'id_pelatih' => $request->id_pelatih
+                                     ]);
+        return redirect('admin/mengelola_latihan')->with('success', 'Data berhasil diperbarui!');
+    }
 }

@@ -10,7 +10,7 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form action="/admin/add_latihan/post" method="POST" enctype="multipart/form-data">
+            <form action="/admin/perbarui_datalatihan/{{$data->id_latihan}}" method="POST" enctype="multipart/form-data">
               @csrf 
               <div class="card-body">
                 <div class="form-group">
@@ -19,24 +19,24 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Mulai Pendaftaran</label>
-                  <input type="date" name="mulai_pendaftaran" class="form-control" id="email" placeholder="Tanggal Mulai Pendaftaran" value="{{$data->mulai_pendaftaran}}">
+                  <input type="date" name="mulai_pendaftaran" class="form-control" id="email" placeholder="Tanggal Mulai Pendaftaran" value="{{\Carbon\Carbon::parse($data->mulai_pendaftaran)->format('Y-m-d')}}">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Selesai Pendaftaran</label>
-                    <input type="date" name="selesai_pendaftaran" class="form-control" id="no_wa" placeholder="Nomor Selesai Pendaftaran" value="{{$data->selesai_pendaftaran}}">
+                    <input type="date" name="selesai_pendaftaran" class="form-control" id="no_wa" placeholder="Nomor Selesai Pendaftaran" value="{{\Carbon\Carbon::parse($data->selesai_pendaftaran)->format('Y-m-d')}}">
                   </div>
                   <div class="form-group">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Mulai Latihan</label>
-                        <input type="date" name="mulai_latihan" class="form-control" id="email" placeholder="Tanggal Mulai Latihan" value="{{$data->mulai_latihan}}">
+                        <input type="date" name="mulai_latihan" class="form-control" id="email" placeholder="Tanggal Mulai Latihan" value="{{\Carbon\Carbon::parse($data->mulai_latihan)->format('Y-m-d')}}">
                     </div>
                     <div class="form-group">
                           <label for="exampleInputEmail1">Selesai Latihan</label>
-                          <input type="date" name="selesai_latihan" class="form-control" id="no_wa" placeholder="Tanggal Selesai Latihan" value="{{\Carbon\Carbon::parse($data->selesai_latihan)->format('d/m/Y')}}">
+                          <input type="date" name="selesai_latihan" class="form-control" id="no_wa" placeholder="Tanggal Selesai Latihan" value="{{\Carbon\Carbon::parse($data->selesai_latihan)->format('Y-m-d')}}">
                     </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Deskripsi Latihan</label>
-                    <input type="text" name="deskripsi_latihan" class="form-control" placeholder="Nomor Whatsapp Aktif"value="{{$data->deskripsi_latihan}}">
+                    <input type="text" name="deskripsi_latihan" class="form-control" placeholder="Deskripsi Latihan"value="{{$data->deskripsi_latihan}}">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Pelatih</label>

@@ -60,7 +60,7 @@ Route::group(['middleware' => ['auth']],function(){
         Route::post('admin/add_latihan/post',[LatihanController::class, 'post_latihan'])->name('post_latihanadd');
         Route::get('admin/hapus_datalatihan/{id_latihan}', [LatihanController::class, 'delete_latihan'])->name('hapus_datalatihan');
         Route::get('admin/edit_datalatihan/{id_latihan}', [LatihanController::class, 'edit_latihan'])->name('edit_datalatihan');
-        
+        Route::post('admin/perbarui_datalatihan/{id}',[LatihanController::class, 'update_latihan'])->name('update_latihan');
     });
 
     Route::group(['middleware' =>'cek_level:petugas'],function(){
