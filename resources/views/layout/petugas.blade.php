@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Dashboard</title>
+  <title>{{auth()->user()->level}} | {{$title}}</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -90,7 +90,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{''}}" class="nav-link {{(request()->is('admin/dataanggota'))? 'active' : ''}}">
+            <a href="/petugas/data_anggota" class="nav-link {{(request()->is('admin/dataanggota'))? 'active' : ''}}">
               <i class="nav-icon fas fa-user"></i>
               <p>
                 Data Anggota
@@ -98,7 +98,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/petugas/mengelola_latihan" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
               <p>
                 Data Latihan

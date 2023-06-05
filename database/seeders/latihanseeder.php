@@ -21,7 +21,8 @@ class latihanseeder extends Seeder
             'mulai_latihan'=>'2023-02-01 00:00:00',
             'selesai_pendaftaran'=>'2023-02-28 00:00:00',
             'id_pelatih'=>'1',
-            'deskripsi_latihan'=>'Hallo Ini Adalah Deskripsi Latihan'
+            'deskripsi_latihan'=>'Hallo Ini Adalah Deskripsi Latihan',
+            'harga_latihan'=>'100000'
         ]);
 
         DB::table('latihans')->insert([
@@ -31,7 +32,8 @@ class latihanseeder extends Seeder
             'mulai_latihan'=>'2023-02-01 00:00:00',
             'selesai_pendaftaran'=>'2023-02-28 00:00:00',
             'id_pelatih'=>'1',
-            'deskripsi_latihan'=>'Hallo Ini Adalah Deskripsi Latihan'
+            'deskripsi_latihan'=>'Hallo Ini Adalah Deskripsi Latihan',
+            'harga_latihan'=>'100000'
         ]);
 
         DB::table('latihans')->insert([
@@ -41,7 +43,8 @@ class latihanseeder extends Seeder
             'mulai_latihan'=>'2023-02-01 00:00:00',
             'selesai_pendaftaran'=>'2023-02-28 00:00:00',
             'id_pelatih'=>'2',
-            'deskripsi_latihan'=>'Hallo Ini Adalah Deskripsi Latihan'
+            'deskripsi_latihan'=>'Hallo Ini Adalah Deskripsi Latihan',
+            'harga_latihan'=>'100000'
         ]);
     }
 }

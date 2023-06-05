@@ -5,39 +5,34 @@
         <!-- Content Header (Page header) -->
         <div class="content-header">
         <div class="container-fluid">
-            <H1>ANGGOTA</H1>
-            <div class="row">
-                <div class="col-sm-8">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Data Petugas Sanggar</h3>
+                        <!-- Profile Image -->
+                        <div class="card card-primary card-outline">
+                            <div class="card-body box-profile">
+                              <div class="text-center">
+                                <img class="profile-user-img img-fluid img-circle"
+                                     src="{{asset('fotopetugassanggar/'.auth()->user()->image)}}"
+                                     alt="User profile picture">
+                              </div>
+              
+                              <h3 class="profile-username text-center">{{auth()->user()->nama}}</h3>
+              
+                              <p class="text-muted text-center">Admin</p>
+              
+                              <ul class="list-group list-group-unbordered mb-3">
+                                <li class="list-group-item">
+                                  <b>Nama</b> <a class="float-right">{{auth()->user()->nama}}</a>
+                                </li>
+                                <li class="list-group-item">
+                                  <b>Email</b> <a class="float-right">{{auth()->user()->email}}</a>
+                                </li>
+                                <li class="list-group-item">
+                                  <b>Alamat</b> <a class="float-right">{{auth()->user()->alamat}}</a>
+                                </li>
+                              </ul>
+                              <a href="/admin/edit_admin/{{auth()->user()->id}}" class="btn btn-primary btn-block"><b>Edit Data</b></a>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="card">
-                        <div class="card-header">
-                            <H3>Data Latihan</H3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Data Anggota</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-8">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Data Artikel</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                            <!-- /.card-body -->
         </div><!-- /.container-fluid -->
         </div>
     </div>

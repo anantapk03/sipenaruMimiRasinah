@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layout.petugas')
 @section('content')
           <!-- Content Wrapper. Contains page content -->
           <div class="content-wrapper">
@@ -9,10 +9,10 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-sm-10">
-                                <h3 class="card-title">Data Latihan Sanggar Tari Topeng Mimi Rasinah</h3>
+                                <h3 class="card-title">Data Anggota Sanggar Tari Topeng Mimi Rasinah</h3>
                             </div>
                             <div class="col">
-                              <center><a href="/admin/add_latihan" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon>Tambah</a></center>
+                              <center><a href="/petugas/mengelola_anggota/add_data" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon>Tambah</a></center>
                             </div>
                         </div>
                     </div>
@@ -30,28 +30,28 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Nama Latihan</th>
-                                    <th>Periode Pendaftaran</th>
-                                    <th>Periode Latihan</th>
-                                    <th style="width: 100px;">Pelatih</th>
-                                    <th>Deskripsi</th>
+                                    <th>Email</th>
+                                    <th>Gambar</th>
+                                    <th>Nama</th>
+                                    <th>Alamat</th>
+                                    <th>Tanggal Bergabung</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
                               @foreach ($data as $row)
                               <tr>
-                                <td>{{$row->id_latihan}}</td>
-                                <td>{{$row->nama_latihan}}</td>  
-                                <td> {{\Carbon\Carbon::parse($row->mulai_pendaftaran)->format(' D, d M Y')}} - {{\Carbon\Carbon::parse($row->selesai_pendaftaran)->translatedformat(' D, d M Y')}}  </td>
-                                <td>{{\Carbon\Carbon::parse($row->mulai_latihan)->format(' D, d M Y')}} - {{\Carbon\Carbon::parse($row->selesai_latihan)->format(' D, d M Y')}} </td>
-                                <td>{{$row->nama}}</td>
-                                <td>{{$row->deskripsi_latihan}}</td>
+                                <td>{{$row->id}}</td>
+                                <td>{{$row->email}}</td>  
                                 <td>
-                                  <a href="/admin/detail_datalatihan/{{$row->id_latihan}}" class="btn btn-info btn-sm" data-id="{{$row->id_latihan}}"><ion-icon name="information-circle-outline"></ion-icon> <!--outline-->Detail</a>  
-                                  <a href="/admin/edit_datalatihan/{{$row->id_latihan}}" class="btn btn-warning btn-sm"><ion-icon name="create-outline"></ion-icon>Edit</a>
-                                  <a href="#" class="btn btn-danger btn-sm delete_latihan" data-id="{{$row->id_latihan}}"><ion-icon name="trash-outline"></ion-icon> <!--outline-->Hapus</a>
-                                  
+                                  <img src="{{asset('fotoanggota/'.$row->image)}}" alt="" style="width: 80px">
+                                </td>
+                                <td> {{$row->nama}} </td>
+                                <td>{{$row->alamat}}</td>
+                                <td>{{$row->created_at}}</td>
+                                <td> 
+                                  <a href="#" class="btn btn-warning btn-sm"><ion-icon name="create-outline"></ion-icon>Edit</a>
+                                  <a href="#" class="btn btn-danger btn-sm delete_anggota" data-id="{{$row->id}}"><ion-icon name="trash-outline"></ion-icon> <!--outline-->Hapus</a>
                                 </td>
                               </tr>
                               @endforeach

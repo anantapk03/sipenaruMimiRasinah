@@ -14,7 +14,11 @@ class CreateDaftarLatihansTable extends Migration
     public function up()
     {
         Schema::create('daftar_latihans', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_daftar');
+            $table->foreignId('id_latihans')->references('id_latihan')->on('latihans');
+            $table->string('konfirmasi_pembayaran');
+            $table->foreignId('id_anggota')->references('id')->on('users');
+            $table->enum('status',['Menunggu', 'Dikonfirmasi', 'Tolak']);
             $table->timestamps();
         });
     }

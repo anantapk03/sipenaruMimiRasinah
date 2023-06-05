@@ -62,16 +62,31 @@ Route::group(['middleware' => ['auth']],function(){
         Route::get('admin/edit_datalatihan/{id_latihan}', [LatihanController::class, 'edit_latihan'])->name('edit_datalatihan');
         Route::post('admin/perbarui_datalatihan/{id}',[LatihanController::class, 'update_latihan'])->name('update_latihan');
         Route::get('admin/detail_datalatihan/{id}',[LatihanController::class, 'detail_latihan'])->name('detail_latihan');
+
+        Route::get('admin/detail_datadaftar/{id_daftar}',[LatihanController::class, 'konfirmasi_pembayaran'])->name('konfirmasi_pembayaran');
+        Route::post('admin/updatekonfirmasipembayaran/{id_daftar}', [LatihanController::class, 'update_pembayaran'])->name('Update_status');
+
     });
 
     Route::group(['middleware' =>'cek_level:petugas'],function(){
         Route::get('/petugas',[PetugasController::class, 'index'])->name('petugas');
-        
+        Route::get('petugas/data_anggota',[PetugasController::class, 'mengelola_anggota'])->name('data_anggota');
+        Route::get('petugas/mengelola_latihan', [PetugasController::class, 'mengelola_latihan'])->name('mengelola_latihan');
+        Route::get('petugas/add_latihan', [PetugasController::class, 'tambah_latihan'])->name('tambah_latihan');
+        Route::post('petugas/add_latihan/post',[PetugasController::class, 'post_latihan'])->name('post_latihanadd');
+        Route::get('petugas/hapus_datalatihan/{id_latihan}', [PetugasController::class, 'delete_latihan'])->name('hapus_datalatihan');
+        Route::get('petugas/edit_datalatihan/{id_latihan}', [PetugasController::class, 'edit_latihan'])->name('edit_datalatihan');
+        Route::post('petugas/perbarui_datalatihan/{id}',[PetugasController::class, 'update_latihan'])->name('update_latihan');
+        Route::get('petugas/detail_datalatihan/{id}',[PetugasController::class, 'detail_latihan'])->name('detail_latihan');
+
+        Route::get('petugas/detail_datadaftar/{id_daftar}',[PetugasController::class, 'konfirmasi_pembayaran'])->name('konfirmasi_pembayaran');
+        Route::post('petugas/updatekonfirmasipembayaran/{id_daftar}', [PetugasController::class, 'update_pembayaran'])->name('Update_status');
 
     });
     Route::group(['middleware' =>'cek_level:anggota'],function(){
         Route::get('/anggota',[AnggotaController::class, 'index'])->name('anggota');
         
+
 
     });
 });

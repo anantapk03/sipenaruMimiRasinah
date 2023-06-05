@@ -70,8 +70,29 @@ class LatihanController extends Controller
     function detail_latihan(Request $request, $id_latihan){
         $data = DB::table('latihans')
         ->leftJoin('users', 'latihans.id_pelatih', '=', 'users.id')
+        ->where('id_latihan', $id_latihan)
         ->first();
+        $data2 = DB::table('daftar_latihans')
+        ->leftJoin('users', 'daftar_latihans.id_anggota', '=', 'users.id')
+        ->where('id_latihans', $id_latihan)
+        ->get();
         $title='Admin | Info Detail Latihan';
-        return view('admin.detail_latihan',compact('data', 'title'));
+        return view('admin.detail_latihan',compact('data', 'title','data2'));
+    }
+
+    function konfirmasi_pembayaran($id_daftar){
+        $data = DB::table('daftar_latihans')->where('id_daftar',$id_daftar)->first();
+        $title = "Admin | Konfirmasi Pembayaran";
+        return view('admin.konfirmasi_pembayaran',compact('data', 'title'));
+    }
+
+    function update_pembayaran(Request $request, $id_daftar){
+        DB::table('daftar_latihans')->where('id_daftar',$id_daftar)
+                                  ->update([
+                                    'status' => $request->status
+                                  ]);
+        $data = DB::table('daftar_latihans')->where('id_daftar',$id_daftar)->first();
+
+        return redirect('/admin/detail_datalatihan/'.$data->id_latihans);
     }
 }

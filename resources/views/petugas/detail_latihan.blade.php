@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layout.petugas')
 @section('content')
           <!-- Content Wrapper. Contains page content -->
           <div class="content-wrapper">
@@ -73,7 +73,7 @@
                                                 @endif
                                             </td>
                                             <td>
-                                              <a href="/admin/detail_datadaftar/{{$row->id_daftar}}" class="btn btn-info btn-sm" data-id="#"><ion-icon name="information-circle-outline"></ion-icon> <!--outline-->Konfirmasi</a>  
+                                              <a href="/petugas/detail_datadaftar/{{$row->id_daftar}}" class="btn btn-info btn-sm" data-id="#"><ion-icon name="information-circle-outline"></ion-icon> <!--outline-->Konfirmasi</a>  
                                             </td>
                                           </tr>
                                       </center>

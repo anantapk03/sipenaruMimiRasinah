@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layout.petugas')
 @section('content')
           <!-- Content Wrapper. Contains page content -->
           <div class="content-wrapper">
@@ -12,7 +12,7 @@
                                 <h3 class="card-title">Data Latihan Sanggar Tari Topeng Mimi Rasinah</h3>
                             </div>
                             <div class="col">
-                              <center><a href="/admin/add_latihan" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon>Tambah</a></center>
+                              <center><a href="/petugas/add_latihan" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon>Tambah</a></center>
                             </div>
                         </div>
                     </div>
@@ -48,8 +48,8 @@
                                 <td>{{$row->nama}}</td>
                                 <td>{{$row->deskripsi_latihan}}</td>
                                 <td>
-                                  <a href="/admin/detail_datalatihan/{{$row->id_latihan}}" class="btn btn-info btn-sm" data-id="{{$row->id_latihan}}"><ion-icon name="information-circle-outline"></ion-icon> <!--outline-->Detail</a>  
-                                  <a href="/admin/edit_datalatihan/{{$row->id_latihan}}" class="btn btn-warning btn-sm"><ion-icon name="create-outline"></ion-icon>Edit</a>
+                                  <a href="/petugas/detail_datalatihan/{{$row->id_latihan}}" class="btn btn-info btn-sm" data-id="{{$row->id_latihan}}"><ion-icon name="information-circle-outline"></ion-icon> <!--outline-->Detail</a>  
+                                  <a href="/petugas/edit_datalatihan/{{$row->id_latihan}}" class="btn btn-warning btn-sm"><ion-icon name="create-outline"></ion-icon>Edit</a>
                                   <a href="#" class="btn btn-danger btn-sm delete_latihan" data-id="{{$row->id_latihan}}"><ion-icon name="trash-outline"></ion-icon> <!--outline-->Hapus</a>
                                   
                                 </td>
