@@ -39,6 +39,10 @@
                     <input type="text" name="deskripsi_latihan" class="form-control" placeholder="Nomor Whatsapp Aktif">
                 </div>
                 <div class="form-group">
+                  <label for="exampleInputEmail1">Deskripsi Latihan</label>
+                  <input type="number" name="harga_latihan" class="form-control" placeholder="Harga Latihan">
+              </div>
+                <div class="form-group">
                     <label for="exampleInputEmail1">Pelatih</label>
                     
                     <select name="id_pelatih" id="" class="form-control">

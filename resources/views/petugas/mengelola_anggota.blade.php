@@ -50,7 +50,7 @@
                                 <td>{{$row->alamat}}</td>
                                 <td>{{$row->created_at}}</td>
                                 <td> 
-                                  <a href="#" class="btn btn-warning btn-sm"><ion-icon name="create-outline"></ion-icon>Edit</a>
+                                  <a href="/petugas/edit_anggota/{{$row->id}}" class="btn btn-warning btn-sm"><ion-icon name="create-outline"></ion-icon>Edit</a>
                                   <a href="#" class="btn btn-danger btn-sm delete_anggota" data-id="{{$row->id}}"><ion-icon name="trash-outline"></ion-icon> <!--outline-->Hapus</a>
                                 </td>
                               </tr>

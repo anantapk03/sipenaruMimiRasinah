@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layout.petugas')
 @section('content')
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -10,7 +10,7 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form action="/admin/edit_passanggota/{{$data->id}}" method="POST" enctype="multipart/form-data">
+            <form action="/petugas/edit_passanggota/{{$data->id}}" method="POST" enctype="multipart/form-data">
               @csrf 
               <div class="card-body">
                 <div class="form-group">

@@ -82,7 +82,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="petugas" class="nav-link {{(request()->is('petugas'))? 'active' : ''}}">
+            <a href="/petugas" class="nav-link {{(request()->is('petugas'))? 'active' : ''}}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -239,6 +239,48 @@
     }).then((result) => {
       if (result.isConfirmed) {
         window.location="/admin/delete_anggota/"+anggotaemail+""
+        Swal.fire(
+          'Berhasil!!',
+          'Data Berhasil Dihapus',
+          'success'
+        )
+      }
+    })
+  })
+  $('.delete_anggota').click(function(){
+    var id = $(this).attr('data-id');
+    Swal.fire({
+      title: 'Apakah anda yakin?',
+      text: "Kamu akan menghapus data dengan id "+id+" ",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Hapus!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location="/petugas/hapus_dataanggota/"+id+""
+        Swal.fire(
+          'Berhasil!!',
+          'Data Berhasil Dihapus',
+          'success'
+        )
+      }
+    })
+  })
+  $('.delete_latihan').click(function(){
+    var id = $(this).attr('data-id');
+    Swal.fire({
+      title: 'Apakah anda yakin?',
+      text: "Kamu akan menghapus data dengan id "+id+" ",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Hapus!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location="/petugas/hapus_datalatihan/"+id+""
         Swal.fire(
           'Berhasil!!',
           'Data Berhasil Dihapus',

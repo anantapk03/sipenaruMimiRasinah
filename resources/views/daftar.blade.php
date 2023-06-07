@@ -13,7 +13,7 @@
           <center><h4 style="font-family: 'Times New Roman', Times, serif"> DAFTAR SEBAGAI ANGGOTA</h4></center>
         </div>
         <div class="card-body">
-          <form action="/register" method="POST" enctype="multipart/form-data">
+          <form action="/register/kirim_Data" method="POST" enctype="multipart/form-data">
             @csrf
               <label>Nama</label>
               <input type="text" name="nama" id="nama" class="form-control" placeholder="Masukan Nama Lengkap Anda">

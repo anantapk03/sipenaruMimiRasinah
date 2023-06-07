@@ -26,6 +26,7 @@ Route::get('login',[AuthConroller::class, 'index'])->name('login');
 Route::post('proses_login',[AuthConroller::class, 'auth_login'])->name('proses_login');
 Route::get('/logout',[AuthConroller::class, 'logout'])->name('logout');
 Route::get('/register',[AuthConroller::class, 'tampilan_register'])->name('tampil_register');
+Route::post('/register/kirim_Data',[AuthConroller::class, 'register_anggota'])->name('register');
 
 //auth 
 //auth admin || petugas || anggota
@@ -71,6 +72,14 @@ Route::group(['middleware' => ['auth']],function(){
     Route::group(['middleware' =>'cek_level:petugas'],function(){
         Route::get('/petugas',[PetugasController::class, 'index'])->name('petugas');
         Route::get('petugas/data_anggota',[PetugasController::class, 'mengelola_anggota'])->name('data_anggota');
+        Route::get('petugas/mengelola_anggota/add_data', [PetugasController::class, 'form_addanggota'])->name('form_anggota');
+        Route::post('petugas/add_anggota',[PetugasController::class, 'add_anggota'])->name('add_anggota');
+        Route::get('petugas/edit_anggota/{id}',[PetugasController::class, 'tampil_dataanggota'])->name('tampil_dataanggota');
+        Route::post('petugas/edit_passanggota/{id}',[PetugasController::class, 'edit_passanggota'])->name('edit_passanggota');
+        Route::get('petugas/hapus_dataanggota/{id}', [PetugasController::class, 'hapus_dataanggota'])->name('hapus_dataanggota');
+
+
+
         Route::get('petugas/mengelola_latihan', [PetugasController::class, 'mengelola_latihan'])->name('mengelola_latihan');
         Route::get('petugas/add_latihan', [PetugasController::class, 'tambah_latihan'])->name('tambah_latihan');
         Route::post('petugas/add_latihan/post',[PetugasController::class, 'post_latihan'])->name('post_latihanadd');
@@ -85,6 +94,8 @@ Route::group(['middleware' => ['auth']],function(){
     });
     Route::group(['middleware' =>'cek_level:anggota'],function(){
         Route::get('/anggota',[AnggotaController::class, 'index'])->name('anggota');
+
+        Route::get('/anggota/data_latihan',[AnggotaController::class, 'data_latihan'])->name('data_latihan');
         
 
 

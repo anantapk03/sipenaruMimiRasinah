@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Latihan;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -45,6 +46,7 @@ class PetugasController extends Controller
         $data->selesai_latihan = $request->selesai_latihan;
         $data->deskripsi_latihan = $request->deskripsi_latihan;
         $data->id_pelatih = $request->id_pelatih;
+        $data->harga_latihan = $request->harga_latihan;
         $data->save();
         return redirect('petugas/mengelola_latihan')->with('success', 'Data berhasil ditambahkan!');
     }
@@ -105,5 +107,51 @@ class PetugasController extends Controller
     }
 
 
+    function form_addanggota(){
+
+        $title="Admin | Tambah Data Anggota";
+        return view('petugas.form_addanggota', ['title'=>$title]);
+    }
+
+    function add_anggota(Request $request){
+        $data=new User(); 
+        $data->email = $request -> email;
+        $data->nama = $request->nama;
+        $data->image = $request->image;
+        $data->no_wa = $request->no_wa;
+        $data->alamat = $request->alamat;
+        $data->password = bcrypt($request->password);
+        $data->level = 'anggota';
+
+        if($request->hasFile('image')){
+            $request->file('image')->move('fotoanggota/', $request->file('image')->getClientOriginalName());
+            $data->image=$request->file('image')->getClientOriginalName();
+            $data->save();
+        } else{
+            $data->save();
+        }
+        return redirect('petugas/data_anggota')->with('success', 'Data Berhasil ditambahkan');
+    }
+
+    
+    function tampil_dataanggota(Request $request, $id){
+        $data=DB::table('users')->where('id',$id)->first();
+        $title = " Edit Data Admin";
+        return view('petugas.edit_dataanggota', ['data'=>$data, 'title'=>$title]);
+    }
+
+    function edit_passanggota(Request $request, $id){
+        $data = User::find($id);
+        $data->password = bcrypt($request->password);
+        $data->save();
+
+        return redirect('petugas/data_anggota')->with('success', 'Data Password Berhasil Diubah!');
+    }
+
+    function hapus_dataanggota(Request $request, $id){
+        $data = User::find($id);
+        $data->delete();
+        return redirect('petugas/data_anggota')->with('success', 'Data Berhasil dihapus!');
+    }
 
 }

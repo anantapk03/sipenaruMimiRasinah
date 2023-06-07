@@ -37,6 +37,7 @@ class LatihanController extends Controller
         $data->selesai_latihan = $request->selesai_latihan;
         $data->deskripsi_latihan = $request->deskripsi_latihan;
         $data->id_pelatih = $request->id_pelatih;
+        $data->harga_latihan=$request->harga_latihan;
         $data->save();
         return redirect('admin/mengelola_latihan')->with('success', 'Data berhasil ditambahkan!');
     }

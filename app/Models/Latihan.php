@@ -18,6 +18,7 @@ class Latihan extends Model
         'selesai_latihan',
         'id_pelatih',
         'deskripsi_latihan',
+        'harga_latihan'
     ];
     protected $date = [
         'created_at',

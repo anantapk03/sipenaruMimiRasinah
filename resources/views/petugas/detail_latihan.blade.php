@@ -40,7 +40,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="card">
-                            <div class="card-header">
+                            <div class="card-header bg-primary">
                                 <h4>Data Pendaftar</h4>
                             </div>
                             <div class="card-body">
@@ -60,7 +60,6 @@
                                             <td style="width: 10px">{{$row->id_daftar}}</td>
                                             <td>{{$row->nama}}</td>
                                             <td>
-                                                @if($row->status != 'Dikonfirmasi')
                                                 @if($row->status == 'Menunggu')
                                                 <div class="bg-warning w-80">
                                                     <center><b>{{$row->status}}</b></center>
@@ -69,7 +68,10 @@
                                                 <div class="bg-danger w-80">
                                                     <center><b>{{$row->status}}</b></center>
                                                 </div>
-                                                @endif
+                                                @else
+                                                <div class="bg-success w-80">
+                                                    <center><b>{{$row->status}}</b></center>
+                                                </div>
                                                 @endif
                                             </td>
                                             <td>
@@ -85,7 +87,7 @@
                     </div>
                     <div class="col">
                         <div class="card">
-                            <div class="card-header">
+                            <div class="card-header bg-success">
                                 <h5>Data Peserta Latihan</h5>
                             </div>
                             <div class="card-body">
@@ -93,6 +95,7 @@
                                     <thead>
                                         <tr>
                                             <th>ID Pendaftaran</th>
+                                            <th>ID Anggota</th>
                                             <th>Nama Anggota</th>
                                         </tr>
                                     </thead>
@@ -102,6 +105,7 @@
                                       <center>
                                         <tr>
                                             <td>{{$row->id_daftar}}</td>
+                                            <td>{{$row->id}}</td>
                                             <td>{{$row->nama}}</td>
                                           </tr>
                                       </center>
