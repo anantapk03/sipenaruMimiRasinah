@@ -95,7 +95,9 @@ Route::group(['middleware' => ['auth']],function(){
     Route::group(['middleware' =>'cek_level:anggota'],function(){
         Route::get('/anggota',[AnggotaController::class, 'index'])->name('anggota');
 
-        Route::get('/anggota/data_latihan',[AnggotaController::class, 'data_latihan'])->name('data_latihan');
+        Route::get('anggota/data_latihan',[AnggotaController::class, 'data_latihan'])->name('data_latihan');
+        Route::get('anggota/data_latihan/daftar_latihan/{id_latihan}',[AnggotaController::class, 'tampil_daftarlatihan'])->name('tampil_daftarlatihan');
+        Route::post('anggota/data_latihan/postdaftar_latihan/{id_latihan}',[AnggotaController::class, 'post_datapendaftaran'])->name('post_daftarlatihan');
         
 
 

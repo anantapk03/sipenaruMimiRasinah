@@ -32,7 +32,7 @@
                                 <p> {{\Carbon\Carbon::parse($row->mulai_latihan)->format(' D, d M Y')}} - {{\Carbon\Carbon::parse($row->selesai_latihan)->format(' D, d M Y')}} </p>
                                 <p>Rp.{{$row->harga_latihan}},00</p> --}}
                                 @if ($date_now < $row->selesai_pendaftaran)
-                                <a href="#" class="btn btn-primary btn-block">Daftar Latihan</a>
+                                <a href="/anggota/data_latihan/daftar_latihan/{{$row->id_latihan}}" class="btn btn-primary btn-block">Daftar Latihan</a>
                                 @endif
                                 @if($date_now > $row->selesai_pendaftaran)
                                 <a href="#" class="btn btn-danger btn-block disabled" role="button" aria-disabled="true">Pendaftaran Ditutup</a>
