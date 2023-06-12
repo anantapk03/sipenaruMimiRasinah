@@ -17,7 +17,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <center>
-                                            @if ($data->level = 'admin')
+                                            @if ($data->level == 'admin')
                                             <img src="{{asset('fotoadmin/'.$data->image)}}" alt="" class="img-thumbnail" style="width:70% "> <br> <br>
                                             @else
                                             <img src="{{asset('fotopetugassanggar/'.$data->image)}}" alt="" class="img-thumbnail" style="width:70% "> <br> <br>

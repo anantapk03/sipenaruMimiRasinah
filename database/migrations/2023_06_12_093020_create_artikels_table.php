@@ -19,6 +19,7 @@ class CreateArtikelsTable extends Migration
             $table->string('preview');
             $table->text('isi_artikel');
             $table->foreignId('id')->references('id')->on('users');
+            $table->string('image_artikel');
             $table->timestamps();
         });
     }

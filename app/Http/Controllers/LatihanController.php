@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\PesertaLatihan;
 use App\Models\Latihan;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
+// use Maatwebsite\Excel\Facades\Excel;
+
 
 class LatihanController extends Controller
 {
@@ -78,7 +82,7 @@ class LatihanController extends Controller
         ->where('id_latihans', $id_latihan)
         ->get();
         $title='Admin | Info Detail Latihan';
-        return view('admin.detail_latihan',compact('data', 'title','data2'));
+        return view('admin.detail_latihan',compact('data', 'title','data2', 'id_latihan'));
     }
 
     function konfirmasi_pembayaran($id_daftar){
@@ -95,5 +99,22 @@ class LatihanController extends Controller
         $data = DB::table('daftar_latihans')->where('id_daftar',$id_daftar)->first();
 
         return redirect('/admin/detail_datalatihan/'.$data->id_latihans);
+    }
+
+    function get_datapesertalatihan($id_latihan){
+        $data2 = DB::table('daftar_latihans')
+        ->leftJoin('users', 'daftar_latihans.id_anggota', '=', 'users.id')
+        ->where('id_latihans', $id_latihan)
+        ->select('id_daftar','id', 'nama')
+        ->get();
+        return view('admin.datapeserta', compact('data2'));
+    }
+    function exportexcel($id_latihan){
+        // $data2 = DB::table('daftar_latihans')
+        // ->leftJoin('users', 'daftar_latihans.id_anggota', '=', 'users.id')
+        // ->where('id_latihans', $id_latihan)
+        // ->select('id_daftar','id', 'nama')
+        // ->get();
+        return Excel::download(new PesertaLatihan($id_latihan), 'DataPesertaLatihan.xlsx');
     }
 }

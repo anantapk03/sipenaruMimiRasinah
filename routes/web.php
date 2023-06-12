@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AnggotaController;
+use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\AuthConroller;
 use App\Http\Controllers\LatihanController;
 use App\Http\Controllers\PetugasController;
@@ -63,10 +64,17 @@ Route::group(['middleware' => ['auth']],function(){
         Route::get('admin/edit_datalatihan/{id_latihan}', [LatihanController::class, 'edit_latihan'])->name('edit_datalatihan');
         Route::post('admin/perbarui_datalatihan/{id}',[LatihanController::class, 'update_latihan'])->name('update_latihan');
         Route::get('admin/detail_datalatihan/{id}',[LatihanController::class, 'detail_latihan'])->name('detail_latihan');
+        Route::get('admin/exportexcel/{id_latihan}',[LatihanController::class, 'exportexcel'])->name('exportexcel');
+        Route::get('admin/getdata_peserta/{id_latihan}',[LatihanController::class, 'get_datapesertalatihan'])->name('datapesertalatihan');
+        
 
         Route::get('admin/detail_datadaftar/{id_daftar}',[LatihanController::class, 'konfirmasi_pembayaran'])->name('konfirmasi_pembayaran');
         Route::post('admin/updatekonfirmasipembayaran/{id_daftar}', [LatihanController::class, 'update_pembayaran'])->name('Update_status');
 
+        Route::get('admin/mengelola_artikel', [ArtikelController::class, 'mengelola_artikel'])->name('mengelola_artikel');
+        Route::get('admin/mengelola_artikel/add_artikel', [ArtikelController::class, 'form_addartikel'])->name('form_addartikel');
+        Route::post('admin/add_artikel/post',[ArtikelController::class, 'add_artikel'])->name('add_artikel');
+        
     });
 
     Route::group(['middleware' =>'cek_level:petugas'],function(){
@@ -87,6 +95,7 @@ Route::group(['middleware' => ['auth']],function(){
         Route::get('petugas/edit_datalatihan/{id_latihan}', [PetugasController::class, 'edit_latihan'])->name('edit_datalatihan');
         Route::post('petugas/perbarui_datalatihan/{id}',[PetugasController::class, 'update_latihan'])->name('update_latihan');
         Route::get('petugas/detail_datalatihan/{id}',[PetugasController::class, 'detail_latihan'])->name('detail_latihan');
+
 
         Route::get('petugas/detail_datadaftar/{id_daftar}',[PetugasController::class, 'konfirmasi_pembayaran'])->name('konfirmasi_pembayaran');
         Route::post('petugas/updatekonfirmasipembayaran/{id_daftar}', [PetugasController::class, 'update_pembayaran'])->name('Update_status');
