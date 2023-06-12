@@ -36,7 +36,7 @@
                     </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Deskripsi Latihan</label>
-                    <input type="text" name="deskripsi_latihan" class="form-control" placeholder="Nomor Whatsapp Aktif">
+                    <input type="text" name="deskripsi_latihan" class="form-control" placeholder="Deskripsi Latihan">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Deskripsi Latihan</label>

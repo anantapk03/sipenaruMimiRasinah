@@ -64,7 +64,7 @@
                                             <td style="width: 10px">{{$row->id_daftar}}</td>
                                             <td>{{$row->nama}}</td>
                                             <td>
-                                                @if($row->status != 'Dikonfirmasi')
+                                                
                                                 @if($row->status == 'Menunggu')
                                                 <div class="bg-warning w-80">
                                                     <center><b>{{$row->status}}</b></center>
@@ -73,7 +73,10 @@
                                                 <div class="bg-danger w-80">
                                                     <center><b>{{$row->status}}</b></center>
                                                 </div>
-                                                @endif
+                                                @else 
+                                                <div class="bg-primary w-80">
+                                                    <center><b>{{$row->status}}</b></center>
+                                                </div>
                                                 @endif
                                             </td>
                                             <td>

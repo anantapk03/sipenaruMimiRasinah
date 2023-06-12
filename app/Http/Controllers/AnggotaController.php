@@ -40,6 +40,8 @@ class AnggotaController extends Controller
             $id = Auth::user()->id;
             $data2 = DB::table('daftar_latihans')
             ->leftJoin('latihans', 'daftar_latihans.id_latihans', '=', 'latihans.id_latihan')
+            ->leftJoin('users', 'daftar_latihans.id_anggota','=','users.id')
+            ->where('id', '=', $id)
             ->get();
             // $data2 = DB::table('daftar_latihans')->where('id_anggota',$id)->get();
             return view('anggota.data_latihan',compact('data', 'title','date_now','data2'));
