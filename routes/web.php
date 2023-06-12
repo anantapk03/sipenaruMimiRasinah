@@ -99,7 +99,8 @@ Route::group(['middleware' => ['auth']],function(){
         Route::get('anggota/data_latihan/daftar_latihan/{id_latihan}',[AnggotaController::class, 'tampil_daftarlatihan'])->name('tampil_daftarlatihan');
         Route::post('anggota/data_latihan/postdaftar_latihan/{id_latihan}',[AnggotaController::class, 'post_datapendaftaran'])->name('post_daftarlatihan');
         
-
-
+        Route::get('anggota/akses_tiketlatihan/{id_latihan}/{id_daftar}', [AnggotaController::class, 'aksestiketlatihan'])->name('akses_tiket');
+        Route::get('anggota/edit_anggota/{id}',[AnggotaController::class, 'edit_anggota'])->name('edit_anggota');
+        Route::post('anggota/edit_passanggota/{id}',[AnggotaController::class, 'edit_passanggota'])->name('edit_passanggota');
     });
 });

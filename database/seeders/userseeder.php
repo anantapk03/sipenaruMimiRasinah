@@ -17,35 +17,13 @@ class userseeder extends Seeder
         //
         DB::table('users')->insert(
             [
-                'nama'=>'Dummy 1',
-                'email'=>'dummy@email.com',
+                'nama'=>'Admin',
+                'email'=>'dummy4@email.com',
                 'password'=>bcrypt('123456'),
                 'alamat'=>'dummy address',
                 'image'=>'ANANTA P K.jpg',
                 'no_wa'=>"6283843726598",
                 'level'=>'admin'
-            ]
-        );
-        DB::table('users')->insert(
-            [
-                'nama'=>'Dummy 2',
-                'email'=>'dummy2@email.com',
-                'password'=>bcrypt('123456'),
-                'alamat'=>'dummy address',
-                'image'=>'ANANTA P K.jpg',
-                'no_wa'=>"6283843726598",
-                'level'=>'petugas'
-            ]
-        );
-        DB::table('users')->insert(
-            [
-                'nama'=>'Dummy 3',
-                'email'=>'dummy3@email.com',
-                'password'=>bcrypt('123456'),
-                'alamat'=>'dummy address',
-                'image'=>'ANANTA P K.jpg',
-                'no_wa'=>"6283843726598",
-                'level'=>'anggota'
             ]
         );
     }

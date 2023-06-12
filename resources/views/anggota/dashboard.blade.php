@@ -5,6 +5,15 @@
         <!-- Content Header (Page header) -->
         <div class="content-header">
         <div class="container-fluid">
+          <!--Got message, kalo datanya berhasil maka bakal muculin message--> 
+          @if ($message=Session::get('success'))
+          <div class="alert alert-success" role="alert">
+            {{$message}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          @endif
                         <!-- Profile Image -->
                         <div class="card card-primary card-outline">
                             <div class="card-body box-profile">
@@ -16,7 +25,7 @@
               
                               <h3 class="profile-username text-center">{{auth()->user()->nama}}</h3>
               
-                              <p class="text-muted text-center">Admin</p>
+                              <p class="text-muted text-center">Anggota</p>
               
                               <ul class="list-group list-group-unbordered mb-3">
                                 <li class="list-group-item">
@@ -29,7 +38,7 @@
                                   <b>Alamat</b> <a class="float-right">{{auth()->user()->alamat}}</a>
                                 </li>
                               </ul>
-                              <a href="/admin/edit_admin/{{auth()->user()->id}}" class="btn btn-primary btn-block"><b>Edit Data</b></a>
+                              <a href="/anggota/edit_anggota/{{auth()->user()->id}}" class="btn btn-primary btn-block"><b>Edit Data</b></a>
                             </div>
                         </div>
                             <!-- /.card-body -->
